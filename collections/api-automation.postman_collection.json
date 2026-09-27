@@ -27,7 +27,23 @@
                   "pm.test(\"Users list exists\", function () {\r",
                   "    let data = pm.response.json();\r",
                   "    pm.expect(data.length).to.be.above(0);\r",
-                  "});"
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Name is valid\", function () {\r",
+                  "   let users = pm.response.json();\r",
+                  "   pm.expect(users[0]).to.have.property(\"name\");\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Username is valid\", function () {\r",
+                  "   let users = pm.response.json();\r",
+                  "   pm.expect(users[0]).to.have.property(\"username\");\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  ""
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -64,7 +80,17 @@
                   "pm.test(\"Validate user id\", function () {\r",
                   "    let user = pm.response.json();\r",
                   "    pm.expect(user.id).to.eql(1);\r",
-                  "});"
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Email is valid\", function () {\r",
+                  "    let email = pm.response.json().email;\r",
+                  "    pm.expect(email).to.match(/@/);\r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  ""
                 ],
                 "type": "text/javascript",
                 "packages": {},
@@ -107,11 +133,22 @@
                   "pm.test(\"Response contains id\", function () {\r",
                   "    let data = pm.response.json();\r",
                   "    pm.expect(data).to.have.property(\"id\");\r",
-                  "});"
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  ""
                 ],
                 "type": "text/javascript",
                 "packages": {},
                 "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "packages": {},
+                "type": "text/javascript"
               }
             }
           ],
